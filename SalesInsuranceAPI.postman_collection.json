@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "f0c2a87e-a1b5-47f1-bb92-ae188c66afdb",
+		"name": "SalesInsuranceAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29111733"
+	},
+	"item": [
+		{
+			"name": "Master",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_Id\": \"UserTest\",\r\n  \"name\": \"User Testing\",\r\n  \"password\": \"12345\",\r\n  \"user_Level\": \"Admin\",\r\n  \"created_By\": \"Admin\",\r\n  \"created_On\": \"2023-12-07T07:03:31.779Z\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7273/api/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7273",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_Id\": \"UserTest\",\r\n  \"name\": \"User Testing UAT\",\r\n  \"password\": \"12345\",\r\n  \"user_Level\": \"Admin\",\r\n  \"updated_By\": \"Admin\",\r\n  \"update_Date\": \"2023-12-07T07:09:48.397Z\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7273/api/user/{User_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7273",
+							"path": [
+								"api",
+								"user",
+								"{User_Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7273/api/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7273",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7273/api/user/{User_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7273",
+							"path": [
+								"api",
+								"user",
+								"{User_Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7273/api/user/{User_Id}/{Password}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7273",
+							"path": [
+								"api",
+								"user",
+								"{User_Id}",
+								"{Password}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7273/api/user/{User_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7273",
+							"path": [
+								"api",
+								"user",
+								"{User_Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activity Log",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"mid\": 1,\r\n  \"dateTime\": \"2023-12-07T07:26:18.208Z\",\r\n  \"details\": \"string\",\r\n  \"responseCode\": 0,\r\n  \"responseDesc\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7273/api/ActivityLog",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7273",
+							"path": [
+								"api",
+								"ActivityLog"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Policy",
+			"item": [
+				{
+					"name": "Create Policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"policy_Id\": \"MP12345\",\r\n  \"customer_Name\": \"Test policy\",\r\n  \"date_Of_Birth\": \"1990-12-07\",\r\n  \"sex\": \"Pria\",\r\n  \"id_Card\": \"019283717121\",\r\n  \"phone_Number\": \"01010101923\",\r\n  \"premium\": 40000,\r\n  \"plan_Type\": \"MP\",\r\n  \"created_By\": \"Admin\",\r\n  \"created_Date\": \"2023-12-07T09:23:24.877Z\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7230/api/Policy",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7230",
+							"path": [
+								"api",
+								"Policy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Policy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"policy_Id\": \"MP12345\",\r\n  \"customer_Name\": \"Test policy UAT\",\r\n  \"date_Of_Birth\": \"1990-12-07\",\r\n  \"sex\": \"Pria\",\r\n  \"id_Card\": \"0192837171212\",\r\n  \"phone_Number\": \"01010101923\",\r\n  \"premium\": 40000,\r\n  \"plan_Type\": \"MP\",\r\n  \"updated_By\": \"Admin\",\r\n  \"update_Date\": \"2023-12-07T09:30:00.516Z\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7230/api/Policy/{Policy_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7230",
+							"path": [
+								"api",
+								"Policy",
+								"{Policy_Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Policy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7230/api/Policy",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7230",
+							"path": [
+								"api",
+								"Policy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Policy Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7230/api/Policy/{Policy_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7230",
+							"path": [
+								"api",
+								"Policy",
+								"{Policy_Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Policy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7230/api/Policy/{Policy_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7230",
+							"path": [
+								"api",
+								"Policy",
+								"{Policy_Id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InstallmentPolicy",
+			"item": [
+				{
+					"name": "Create Installment Policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pid\": 1,\r\n  \"policy_Id\": \"MP12345\",\r\n  \"installment_No\": 2,\r\n  \"premium\": 40000,\r\n  \"created_By\": \"Admin\",\r\n  \"created_On\": \"2023-12-07T10:29:14.290Z\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7190/api/InstallmentPolicy",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7190",
+							"path": [
+								"api",
+								"InstallmentPolicy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Installment Policy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pid\": 1,\r\n  \"policy_Id\": \"MP12345\",\r\n  \"installment_No\": 2,\r\n  \"premium\": 40000,\r\n  \"paydate\": \"2023-12-07T10:44:38.005Z\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7190/api/InstallmentPolicy/{Policy_Id}/{Installment_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7190",
+							"path": [
+								"api",
+								"InstallmentPolicy",
+								"{Policy_Id}",
+								"{Installment_Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Policy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7190/api/InstallmentPolicy",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7190",
+							"path": [
+								"api",
+								"InstallmentPolicy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Policy Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7190/api/InstallmentPolicy/{Policy_Id}/{Installment_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7190",
+							"path": [
+								"api",
+								"InstallmentPolicy",
+								"{Policy_Id}",
+								"{Installment_Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Installment Policy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7190/api/InstallmentPolicy/{Policy_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7190",
+							"path": [
+								"api",
+								"InstallmentPolicy",
+								"{Policy_Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Installment Policy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7190/api/InstallmentPolicy/{Policy_Id}/{Installment_Id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7190",
+							"path": [
+								"api",
+								"InstallmentPolicy",
+								"{Policy_Id}",
+								"{Installment_Id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
